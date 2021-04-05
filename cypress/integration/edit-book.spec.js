@@ -7,8 +7,6 @@ describe ( 'When the user wants to edit a book', ()=>{
     before (()=>{
         cy.visit('/');  
         cy.clearCookies();
-        cy.contains('10 / page').click();
-        cy.contains('50 / page').click();
 
         cy.get('table').contains('tr', name).invoke('index').then((i) =>{
             cy.get(`.ant-table-tbody > :nth-child(${i+1}) > :nth-child(4)`).click();
